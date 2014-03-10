@@ -1,0 +1,12 @@
+Rough guide for using this repo:
+
+Please visit http://www.jetbrains.com/pycharm/download/ and download PyCharm (Used as the python IDE)
+Make sure you have python (Version 2.7 preferably) installed.
+
+You will also need the latest ADT available here: http://developer.android.com/sdk/index.html
+
+Set the ADT workspace to the root repository folder in order to work on the android app.
+
+If deploying to cloud server app, please read the comments in fabfile.py - you will need to private key
+and some software utilities installed to connect and deploy. ====> You need the fabric python module
+locally too!!! (I had to download the pycrypto binary first)
