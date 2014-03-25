@@ -2,7 +2,8 @@ __author__ = 'Lewis'
 
 from ShimmerSensor import *
 from shimmer_defs import *
-from threading import Thread,Lock
+from threading import Thread, Lock
+import time
 
 
 # Thread entry point for executing the class
@@ -57,13 +58,9 @@ class Accelerometer(ShimmerSensor):
         # Set up a thread locking class
         self.thread_lock = Lock()
 
-        # Send the set sensors command, and enable the accelerometer
-        self.send_set_sensors(accel=True)
-
-        # Set the sampling rate
-        self.send_set_sample_rate(SampleRate.SAMPLING_10HZ)
-
         self.results = []
+
+        self.monitoring = False
 
     # Return the kind of device we are
     def get_kind(self):
@@ -89,69 +86,92 @@ class Accelerometer(ShimmerSensor):
 
         return result
 
+    # Starts this device
+    def start_monitoring(self):
+        self.monitoring = True
+
+    # Stops this device
+    def stop_monitoring(self):
+        self.monitoring = False
+
     # This is the entry point of the thread that manages this device - never call this yourself
     # it is blocking
     def thread_ep(self):
-        if self.verbose:
-            print "Accelerometer thread started for device with address: " + self.get_device_address()
-
-        buffer_size = 31  # Maximum buffer size
-
-        # Start by setting the buffer size
-        self.send_set_buffer_size(buffer_size)
-
-        # Now start streaming
-        self.send_start_streaming()
-
-        # Please not that the following snippet has been modified from
-        # https://github.com/ShimmerResearch/tinyos-shimmer/blob/master/apps/BtStream/python/bufferTest.py
-
-        # Set up vars for reading
-        ddata = ""
-        num_bytes = 0
-        sample_size = 8                             # TimeStamp (2), 3xAccel (3x2)
-        frame_size = 1+(sample_size*buffer_size)    # Packet type (1), ((TimeStamp (2), 3xAccel (3x2)) x buffersize)
-        last_time_stamp = 0
-
-        # Loop forever
         while True:
-            # read incoming data
-            while num_bytes < frame_size:
-                ddata += self.read_buffer(frame_size)
-                num_bytes = len(ddata)
+            try:
+                while not self.monitoring:
+                    print "Monitoring is currently disabled..."
+                    time.sleep(1)
 
-            # Extract frame data
-            data = ddata[0:frame_size]
-            ddata = ddata[frame_size:]
-            num_bytes = len(ddata)
+                if self.verbose:
+                    print "Accelerometer thread started for device with address: " + self.get_device_address()
 
-            # Extract data from each frame IF it is a valid packet
-            packettype = struct.unpack('B', data[0:1])
-            if packettype[0] == PacketType.DATA_PACKET:
-                for i in range(buffer_size):
-                    # Unpack this frame
-                    (timestamp, accelx, accely, accelz) = \
-                        struct.unpack('HHHH', data[(1+(sample_size*i)):(9+(sample_size*i))])
+                # Send the set sensors command, and enable the accelerometer
+                self.send_set_sensors(accel=True)
 
-                    # Calculate the rate
-                    if timestamp < last_time_stamp:
-                        diff = timestamp + 0xFFFE - last_time_stamp
-                    else:
-                        diff = timestamp - last_time_stamp
+                # Set the sampling rate
+                self.send_set_sample_rate(SampleRate.SAMPLING_10HZ)
 
-                    rate = float(32768) / diff
+                buffer_size = 31  # Maximum buffer size
 
-                    # Lock the mutex to stop race conditions
-                    self.thread_lock.acquire(True)
+                # Start by setting the buffer size
+                self.send_set_buffer_size(buffer_size)
 
-                    # Record the frame
-                    self.results.append(AccelBuffer(timestamp, rate, accelx, accely, accelz))
+                # Now start streaming
+                self.send_start_streaming()
 
-                    # pop the front object if the buffer is too long - avoid memory wastage
-                    if len(self.results) > 1000:
-                        self.results = self.results[1:]
+                # Please not that the following snippet has been modified from
+                # https://github.com/ShimmerResearch/tinyos-shimmer/blob/master/apps/BtStream/python/bufferTest.py
 
-                    # Release the mutex
-                    self.thread_lock.release()
+                # Set up vars for reading
+                ddata = ""
+                num_bytes = 0
+                sample_size = 8                             # TimeStamp (2), 3xAccel (3x2)
+                frame_size = 1+(sample_size*buffer_size)    # Packet type (1), ((TimeStamp (2), 3xAccel (3x2)) x buffersize)
+                last_time_stamp = 0
 
-                    last_time_stamp = timestamp
+                # Loop while monitoring is taking place
+                while self.monitoring:
+                    # read incoming data
+                    while num_bytes < frame_size:
+                        ddata += self.read_buffer(frame_size)
+                        num_bytes = len(ddata)
+
+                    # Extract frame data
+                    data = ddata[0:frame_size]
+                    ddata = ddata[frame_size:]
+                    num_bytes = len(ddata)
+
+                    # Extract data from each frame IF it is a valid packet
+                    packettype = struct.unpack('B', data[0:1])
+                    if packettype[0] == PacketType.DATA_PACKET:
+                        for i in range(buffer_size):
+                            # Unpack this frame
+                            (timestamp, accelx, accely, accelz) = \
+                                struct.unpack('HHHH', data[(1+(sample_size*i)):(9+(sample_size*i))])
+
+                            # Calculate the rate
+                            if timestamp < last_time_stamp:
+                                diff = timestamp + 0xFFFE - last_time_stamp
+                            else:
+                                diff = timestamp - last_time_stamp
+
+                            rate = float(32768) / diff
+
+                            # Lock the mutex to stop race conditions
+                            self.thread_lock.acquire(True)
+
+                            # Record the frame
+                            self.results.append(AccelBuffer(timestamp, rate, accelx, accely, accelz))
+
+                            # pop the front object if the buffer is too long - avoid memory wastage
+                            if len(self.results) > 1000:
+                                self.results = self.results[1:]
+
+                            # Release the mutex
+                            self.thread_lock.release()
+
+                            last_time_stamp = timestamp
+            except:
+                # Some kind of error occured, try to reconnect the sensor
+                self.connect_device()

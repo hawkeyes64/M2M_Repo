@@ -6,6 +6,7 @@ import org.alexd.jsonrpc.JSONRPCParams;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -153,6 +154,16 @@ public class DeviceControlActivity extends Activity {
 			toggleMonitorStatus();
 			// and fetch the new state to make sure the change was successful
 			updateMonitorButtonStatus();
+		}
+	}
+	
+	// Called when the Live Stream is clicked
+	public void btnStream_onClick(View v) {
+		// Only do anything if we have a monitor address
+		if (MainActivity.bSuccessfullyConnected) {
+			// Change to the stream activity
+			Intent intent = new Intent(v.getContext(), LiveStream.class);
+			startActivity(intent);
 		}
 	}
 

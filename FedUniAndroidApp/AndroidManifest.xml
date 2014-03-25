@@ -30,6 +30,10 @@
             android:name="com.FedUni.mobileapp.DeviceControlActivity"
             android:label="@string/title_activity_device_control" >
         </activity>
+        <activity
+            android:name="com.FedUni.mobileapp.LiveStream"
+            android:label="@string/title_activity_live_stream" >
+        </activity>
     </application>
 
 </manifest>

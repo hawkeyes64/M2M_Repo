@@ -14,20 +14,25 @@ class ShimmerSensor(object):
 
         self.verbose = verbose
 
-        # Start by connecting the device
-        if self.verbose:
-            print "ShimmerSensor - About to connect bluetooth device " + hwaddr + " to channel " + \
-                  str(current_device_id_count)
-
-        self.com_sock = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
-        self.com_sock.connect((hwaddr, current_device_id_count))
-
         # Remember the details for the device
         self.device_address = hwaddr
         self.device_channel = current_device_id_count
 
+        self.com_sock = None
+
         # Increment the channel
         current_device_id_count += 1
+
+        self.connect_device()
+
+    def connect_device(self):
+        # Start by connecting the device
+        if self.verbose:
+            print "ShimmerSensor - About to connect bluetooth device " + self.get_device_address() + " to channel " + \
+                  str(current_device_id_count)
+
+        self.com_sock = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
+        self.com_sock.connect((self.get_device_address(), self.get_device_channel()))
 
     # Get the address of the device
     def get_device_address(self):

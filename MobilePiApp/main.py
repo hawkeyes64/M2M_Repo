@@ -10,8 +10,14 @@ Sensor_Array = []
 
 # Called when the android app tells us to alter our monitoring state
 def on_update_monitor_state(new_state):
-    global bMonitorEnabled
+    global bMonitorEnabled, Sensor_Array
     bMonitorEnabled = new_state
+
+    for s in Sensor_Array:
+        if bMonitorEnabled:
+            s.start_monitoring()
+        else:
+            s.stop_monitoring()
 
 
 # Called (usually) by the android app requesting the current monitoring state
@@ -57,6 +63,12 @@ def main():
     # start the android application interface
     # notice that we are passing function pointers...
     android_communicator.start_android_listener(get_monitor_state, on_update_monitor_state, get_monitor_data)
+
+    for s in Sensor_Array:
+        if bMonitorEnabled:
+            s.start_monitoring()
+        else:
+            s.stop_monitoring()
 
     print 'Loaded successfully.'
 

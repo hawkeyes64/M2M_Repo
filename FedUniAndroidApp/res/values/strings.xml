@@ -10,5 +10,8 @@
     <string name="hello_world">Hello world!</string>
     <string name="stringDeviceNotFound">Monitoring device not found...</string>
     <string name="connecting">Connecting to monitor station...</string>
+    <string name="title_activity_live_stream">LiveStream</string>
+    <string name="txtBack">Back</string>
+    <string name="txtLiveStream">Live Stream</string>
 
 </resources>
