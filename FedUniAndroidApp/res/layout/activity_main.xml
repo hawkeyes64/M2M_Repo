@@ -9,34 +9,12 @@
     tools:context=".MainActivity" >
 
     <TextView
-        android:id="@+id/textSearching"
+        android:id="@+id/textConnecting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/wait_search_pi_device" />
-
-    <ProgressBar
-        android:id="@+id/searchProgress"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/textSearching" />
-
-    <Button
-        android:id="@+id/btnSkip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/searchProgress"
-        android:text="@string/skip_text" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/btnSkip"
-        android:layout_alignLeft="@+id/searchProgress"
-        android:text="@string/exit_text" />
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/connecting"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

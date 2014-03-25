@@ -1,9 +1,7 @@
 package com.FedUni.mobileapp;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.net.Socket;
+import org.alexd.jsonrpc.JSONRPCClient;
+import org.alexd.jsonrpc.JSONRPCParams;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -21,102 +19,90 @@ public class DeviceControlActivity extends Activity {
 	// This function launches a request to the monitor to fetch it's current
 	// monitoring status
 	private boolean getMonitorStatus() {
-		// Thread extension class used to return the result
-		class GetMonitorStatusThread extends Thread {
-			public boolean result = false;
 
-			public void run() {
-				// create a socket
-				Socket s = new Socket();
+		class getMonitorStatusOp extends AsyncTask<Void, Void, Boolean> {
+			@Override
+			protected Boolean doInBackground(Void... params) {
+				// Create client specifying JSON-RPC version 2.0
+				JSONRPCClient client = JSONRPCClient.create("http://"
+						+ MainActivity.RaspberryPiAddress.getAddress()
+								.getHostAddress() + ":"
+						+ MainActivity.RaspberryPiAddress.getPort(),
+						JSONRPCParams.Versions.VERSION_2);
+
+				client.setConnectionTimeout(2000);
+				client.setSoTimeout(2000);
+
 				try {
-					// connect it
-					s.connect(MainActivity.RaspberryPiAddress);
-					DataInputStream dataInputStream = new DataInputStream(
-							s.getInputStream());
-					DataOutputStream dataOutputStream = new DataOutputStream(
-							s.getOutputStream());
-
-					// 0x00 is used to fetch the current monitor status
-					dataOutputStream.writeByte(0);
-
-					// read the result
-					if (dataInputStream.readByte() == 0)
-						result = false;
-					else
-						result = true;
-
-					// clean up the socket
-					s.close();
+					return client.callBoolean("get_monitor_state");
 				} catch (Exception e) {
-					// clean up the socket
-					try {
-						s.close();
-					} catch (Exception e1) {
-					}
+					e.printStackTrace();
 				}
+
+				// and finally return the result
+				return false;
+			}
+
+			@Override
+			protected void onPostExecute(Boolean result) {
+			}
+
+			@Override
+			protected void onPreExecute() {
+			}
+
+			@Override
+			protected void onProgressUpdate(Void... values) {
 			}
 		}
 
-		// Create a class instance
-		GetMonitorStatusThread t = new GetMonitorStatusThread();
-		// and start it
-		t.start();
-		// and wait for it to finish
 		try {
-			t.join();
-		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			return new getMonitorStatusOp().execute().get();
+		} catch (Exception e) {
+			return false;
 		}
-
-		// and finally return the result
-		return t.result;
 	}
 
 	// Instructs the monitor to change it's monitoring status
 	private void toggleMonitorStatus() {
-		// Thread extension used to send info to the monitor
-		class ToggleMonitorStatusThread extends Thread {
-			public void run() {
-				// create the socket
-				Socket s = new Socket();
+		class setMonitorStatusOp extends AsyncTask<Boolean, Void, Void> {
+			@Override
+			protected Void doInBackground(Boolean... params) {
+				// Create client specifying JSON-RPC version 2.0
+				JSONRPCClient client = JSONRPCClient.create("http://"
+						+ MainActivity.RaspberryPiAddress.getAddress()
+								.getHostAddress() + ":"
+						+ MainActivity.RaspberryPiAddress.getPort(),
+						JSONRPCParams.Versions.VERSION_2);
+
+				client.setConnectionTimeout(2000);
+				client.setSoTimeout(2000);
+
 				try {
-					// connect to the monitor
-					s.connect(MainActivity.RaspberryPiAddress);
-					DataOutputStream dataOutputStream = new DataOutputStream(
-							s.getOutputStream());
-
-					// tell the monitor we are about to give it a new state
-					dataOutputStream.writeByte(1);
-
-					// send the new state
-					if (bCurrentMonitorState)
-						dataOutputStream.writeByte(0);
-					else
-						dataOutputStream.writeByte(1);
-
-					// clean up the socket
-					s.close();
+					client.callBoolean("set_monitor_state", params[0]);
 				} catch (Exception e) {
-					// cleanup the socket
-					try {
-						s.close();
-					} catch (Exception e1) {
-					}
+					e.printStackTrace();
 				}
+
+				return null;
+			}
+
+			@Override
+			protected void onPostExecute(Void result) {
+			}
+
+			@Override
+			protected void onPreExecute() {
+			}
+
+			@Override
+			protected void onProgressUpdate(Void... values) {
 			}
 		}
 
-		// create the thread
-		ToggleMonitorStatusThread t = new ToggleMonitorStatusThread();
-		// and start it
-		t.start();
-		// and wait for it to finish
 		try {
-			t.join();
-		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			new setMonitorStatusOp().execute(!bCurrentMonitorState).get();
+		} catch (Exception e) {
 		}
 	}
 
@@ -147,7 +133,7 @@ public class DeviceControlActivity extends Activity {
 		// update it with the address of the monitor
 		tv.setText("Monitor located at: "
 				+ MainActivity.RaspberryPiAddress.toString());
-		
+
 		// Set the toggle button caption
 		updateMonitorButtonStatus();
 	}
@@ -165,7 +151,7 @@ public class DeviceControlActivity extends Activity {
 		if (MainActivity.bSuccessfullyConnected) {
 			// update the monitor status
 			toggleMonitorStatus();
-			// and fetch the new state to make sure the change was successful 
+			// and fetch the new state to make sure the change was successful
 			updateMonitorButtonStatus();
 		}
 	}

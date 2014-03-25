@@ -1,82 +1,68 @@
 __author__ = 'Lewis'
 
-import socket
-import sys
+import pyjsonrpc
 from threading import Thread
+import sys
 
 # socket settings
 local_host = ''
 local_port = 3487
 
+# Function pointers
+fn_get_monitor_state = None
+fn_on_update_monitor_state = None
+fn_get_monitor_data = None
+
+
+# Server export to set the current monitoring state
+def set_monitoring_state_export(new_state):
+    fn_on_update_monitor_state(new_state)
+    return fn_get_monitor_state()
+
+
+# Server export to fetch the current monitoring state
+def get_monitor_state_export():
+    return fn_get_monitor_state()
+
+
+# Server export to fetch the current data from the sensors
+def get_monitor_data_export():
+    return fn_get_monitor_data()
+
+
+class RequestHandler(pyjsonrpc.HttpRequestHandler):
+
+    # Register public JSON-RPC methods
+    methods = {
+        "get_monitor_state": get_monitor_state_export,
+        "set_monitor_state": set_monitoring_state_export,
+        "get_monitor_data": get_monitor_data_export
+    }
+
 
 # this is a basic thread that manages communications with the android app
 # it is extremely simple as all it has to do is communicate the current
 # state of monitoring, and be able to allow the state to be toggled.
-def android_listener_thread(get_monitor_state, on_update_monitor_state):
-    # The thread will never return
-    while True:
+def android_listener_thread(get_monitor_state, on_update_monitor_state, get_monitor_data):
+    global fn_get_monitor_state, fn_on_update_monitor_state, fn_get_monitor_data
 
-        # Attempt to open the socket
-        try:
-            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        except socket.error:
-            # Oh no... Critical error...
-            print 'Failed to create android socket'
-            sys.exit()
+    # Set up the function pointers
+    fn_get_monitor_state = get_monitor_state
+    fn_on_update_monitor_state = on_update_monitor_state
+    fn_get_monitor_data = get_monitor_data
 
-        s.bind((local_host, local_port))
-        s.listen(5)
+    # Threading HTTP-Server
+    http_server = pyjsonrpc.ThreadingHttpServer(
+        server_address=(local_host, local_port),
+        RequestHandlerClass = RequestHandler
+    )
 
-        print 'Android communication port opened'
-
-        # Now wait for the android app to try to connect
-        client, address = s.accept()
-
-        print 'Android client connected'
-
-        # TODO: We should REALLY have some kind of authentication here
-
-        # Now we figure out what the client is telling us to do...
-        try:
-            # The client will always send us one byte that indicates what it wants us to do
-            data = client.recv(1)
-            if not data:
-                continue
-
-            # TODO: Remove debug crap
-            print [data]
-
-            # 0x00 indicates that the client wants the current monitoring state
-            if data == '\x00':
-                # return the current state as standard bool values (Python transmits true and false as INTS not bytes)
-                if get_monitor_state():
-                    client.send('\x01')
-                else:
-                    client.send('\x00')
-
-                # Always close the socket - one command per transaction
-                client.close()
-
-            # 0x01 indicates that the client wants to change the monitoring status
-            if data == '\x01':
-                # Get the new state
-                data = client.recv(1)
-                if data == '\x01':
-                    on_update_monitor_state(True)
-                else:
-                    on_update_monitor_state(False)
-
-                # TODO: Remove debug crap
-                print get_monitor_state()
-
-                # Always close the socket - one command per transaction
-                client.close()
-        except:
-            pass
+    print "Starting HTTP server ..."
+    http_server.serve_forever()
 
 
 # This function opens the socket used for communicating with the android management application
-def start_android_listener(get_monitor_state, on_update_monitor_state):
+def start_android_listener(get_monitor_state, on_update_monitor_state, get_monitor_data):
     thread = Thread(target=android_listener_thread,
-                    args=[get_monitor_state, on_update_monitor_state])
+                    args=[get_monitor_state, on_update_monitor_state, get_monitor_data])
     thread.start()

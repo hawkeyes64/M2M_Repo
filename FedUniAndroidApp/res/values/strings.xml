@@ -9,5 +9,6 @@
     <string name="title_activity_device_control">DeviceControlActivity</string>
     <string name="hello_world">Hello world!</string>
     <string name="stringDeviceNotFound">Monitoring device not found...</string>
+    <string name="connecting">Connecting to monitor station...</string>
 
 </resources>

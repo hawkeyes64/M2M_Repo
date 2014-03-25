@@ -11,6 +11,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/MobilePiApp$Local.coverage" NAME="Local Coverage Results" MODIFIED="1395722348091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -23,39 +26,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="53" selection-start="536" selection-end="536" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="595">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../CloudServer/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="22" selection-end="22" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="db_schema.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../CloudServer/db_schema.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="0" selection-start="497" selection-end="497" vertical-scroll-proportion="0.5564648" vertical-offset="0" max-vertical-offset="611">
+            <state line="44" column="46" selection-start="1243" selection-end="1243" vertical-scroll-proportion="1.6019417" vertical-offset="0" max-vertical-offset="1080">
               <folding>
-                <element signature="e#48#71#0" expanded="true" />
+                <element signature="e#22#49#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fabfile.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../CloudServer/fabfile.py">
+      <file leaf-file-name="bluetooth_communicator.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bluetooth_communicator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="31" selection-start="995" selection-end="995" vertical-scroll-proportion="0.0" vertical-offset="358" max-vertical-offset="799">
+            <state line="64" column="32" selection-start="2206" selection-end="2206" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1035">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="shimmer_defs.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shimmer2r/shimmer_defs.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="23" selection-start="203" selection-end="203" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="2475">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="accelerometer.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shimmer2r/accelerometer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="40" selection-start="838" selection-end="838" vertical-scroll-proportion="0.0" vertical-offset="713" max-vertical-offset="2400">
               <folding />
             </state>
           </provider>
@@ -64,7 +67,18 @@
       <file leaf-file-name="android_communicator.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/android_communicator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="17" selection-start="128" selection-end="128" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="1496">
+            <state line="31" column="0" selection-start="664" selection-end="664" vertical-scroll-proportion="0.0" vertical-offset="188" max-vertical-offset="1110">
+              <folding>
+                <element signature="e#22#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShimmerSensor.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shimmer2r/ShimmerSensor.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="147" column="29" selection-start="4266" selection-end="4266" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2430">
               <folding />
             </state>
           </provider>
@@ -80,19 +94,24 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/android_communicator.py" />
         <option value="$PROJECT_DIR$/../CloudServer/fabfile.py" />
         <option value="$PROJECT_DIR$/../CloudServer/main.py" />
         <option value="$PROJECT_DIR$/../CloudServer/db_schema.py" />
+        <option value="$PROJECT_DIR$/fabfile.py" />
+        <option value="$PROJECT_DIR$/shimmer2r.py" />
+        <option value="$PROJECT_DIR$/shimmer2r/ShimmerSensor.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/android_communicator.py" />
+        <option value="$PROJECT_DIR$/shimmer2r/accelerometer.py" />
+        <option value="$PROJECT_DIR$/bluetooth_communicator.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-2" />
+    <option name="y" value="-3" />
+    <option name="width" value="1370" />
+    <option name="height" value="740" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -149,6 +168,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MobilePiApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MobilePiApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shimmer2r" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -162,13 +195,20 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="SearchEverywhereHistory" value="" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings />
     </option>
   </component>
-  <component name="RunManager" selected="Python.fabfile">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Users\Lewis\Documents\GitHub\M2M_Repo\MobilePiApp\shimmer2r" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.Local">
     <configuration default="false" name="android_communicator" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -181,12 +221,33 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="MobilePiApp" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PyDebugRunner" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PyDebugRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CloudServer" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="py.test">
@@ -199,6 +260,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="MobilePiApp" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -223,6 +285,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="MobilePiApp" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -246,6 +309,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="MobilePiApp" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
       <option name="PARAMETERS" value="" />
       <method />
@@ -260,6 +324,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="MobilePiApp" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -272,6 +337,9 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -282,6 +350,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="MobilePiApp" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -301,6 +370,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="MobilePiApp" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -310,27 +380,48 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="fabfile" type="PythonConfigurationType" factoryName="Python">
+    <configuration default="false" name="RasbPie" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../CloudServer" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="SDK_HOME" value="D:/Python27/python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CloudServer" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../CloudServer/fabfile.py" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/fabfile.py" />
+      <option name="PARAMETERS" value="deploy" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Local" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python2.7" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MobilePiApp" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Python.fabfile" />
-      <item index="1" class="java.lang.String" itemvalue="Python.android_communicator" />
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="Python.RasbPie" />
+      <item index="1" class="java.lang.String" itemvalue="Python.Local" />
+      <item index="2" class="java.lang.String" itemvalue="Python.android_communicator" />
     </list>
     <recent_temporary>
       <list size="1">
@@ -365,18 +456,19 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-2" y="-3" width="1370" height="740" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24304539" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24231333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3993559" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32025117" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32025117" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31937984" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -402,151 +494,341 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="53" selection-start="536" selection-end="536" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
+        <state line="46" column="8" selection-start="1045" selection-end="1045" vertical-scroll-proportion="0.0" vertical-offset="473" max-vertical-offset="1425">
+          <folding>
+            <element signature="e#22#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bluetooth_communicator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="0" selection-start="1581" selection-end="1704" vertical-scroll-proportion="0.0" vertical-offset="825" max-vertical-offset="1500">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../CloudServer/main.py">
+    <entry file="file://$PROJECT_DIR$/shimmer2r/shimmer_defs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="5" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="238">
+        <state line="25" column="27" selection-start="533" selection-end="556" vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="2475">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shimmer2r/accelerometer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="31" selection-start="649" selection-end="649" vertical-scroll-proportion="0.0" vertical-offset="368" max-vertical-offset="960">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shimmer2r/ShimmerSensor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="0" selection-start="1578" selection-end="1578" vertical-scroll-proportion="0.0" vertical-offset="825" max-vertical-offset="2310">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="41" selection-start="508" selection-end="508" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="585">
+          <folding>
+            <element signature="e#22#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CloudServer/db_schema.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="497" selection-end="497" vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="435" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../CloudServer/fabfile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="31" selection-start="995" selection-end="995" vertical-scroll-proportion="0.0" vertical-offset="358" max-vertical-offset="799">
+        <state line="28" column="63" selection-start="0" selection-end="1407" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="705" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fabfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="5" selection-start="1303" selection-end="1303" vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="720" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android_communicator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="0" selection-start="1521" selection-end="1830" vertical-scroll-proportion="0.0" vertical-offset="825" max-vertical-offset="990">
+          <folding>
+            <element signature="e#22#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bluetooth_communicator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="95" selection-end="95" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="1365">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shimmer2r/shimmer_defs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="34" selection-start="696" selection-end="696" vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="2475">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shimmer2r/accelerometer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="33" selection-start="56" selection-end="56" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="165">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shimmer2r/ShimmerSensor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="489" selection-end="489" vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="570">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shimmer2r/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="26" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
+          <folding>
+            <element signature="e#22#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CloudServer/db_schema.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="497" selection-end="497" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="493" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CloudServer/fabfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="31" selection-start="995" selection-end="995" vertical-scroll-proportion="0.0" vertical-offset="358" max-vertical-offset="799" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/android_communicator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="17" selection-start="128" selection-end="128" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="1496">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="53" selection-start="536" selection-end="536" vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="595">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android_communicator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="151" selection-end="151" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="1513">
-          <folding />
+          <folding>
+            <element signature="e#22#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="53" selection-start="536" selection-end="536" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
-          <folding />
+          <folding>
+            <element signature="e#22#49#0" expanded="true" />
+          </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CloudServer/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="22" selection-end="22" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="255" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CloudServer/db_schema.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="497" selection-end="497" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="493" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CloudServer/fabfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="31" selection-start="995" selection-end="995" vertical-scroll-proportion="0.0" vertical-offset="358" max-vertical-offset="799" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/android_communicator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="151" selection-end="151" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="1513">
-          <folding />
+        <state line="8" column="17" selection-start="128" selection-end="128" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="1496">
+          <folding>
+            <element signature="e#22#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="53" selection-start="536" selection-end="536" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
+          <folding>
+            <element signature="e#22#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CloudServer/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="5" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="238" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CloudServer/fabfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="31" selection-start="995" selection-end="995" vertical-scroll-proportion="0.0" vertical-offset="358" max-vertical-offset="799" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android_communicator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="17" selection-start="128" selection-end="128" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="1496">
+          <folding>
+            <element signature="e#22#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="53" selection-start="536" selection-end="536" vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="595">
-          <folding />
+          <folding>
+            <element signature="e#22#49#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/android_communicator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="0" selection-start="151" selection-end="151" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="1513">
-          <folding />
+          <folding>
+            <element signature="e#22#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="53" selection-start="536" selection-end="536" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
+          <folding>
+            <element signature="e#22#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android_communicator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="151" selection-end="151" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="1513">
+          <folding>
+            <element signature="e#22#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="53" selection-start="536" selection-end="536" vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="595">
+          <folding>
+            <element signature="e#22#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android_communicator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="151" selection-end="151" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="1513">
+          <folding>
+            <element signature="e#22#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="39" selection-start="253" selection-end="253" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
-          <folding />
+          <folding>
+            <element signature="e#22#49#0" expanded="true" />
+          </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/threading.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="762" column="0" selection-start="27028" selection-end="27028" vertical-scroll-proportion="0.0" vertical-offset="12824" max-vertical-offset="22729" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/android_communicator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="30" selection-start="710" selection-end="710" vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="884">
-          <folding />
+          <folding>
+            <element signature="e#22#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Python27/Lib/threading.py">
+    <entry file="file://$PROJECT_DIR$/../CloudServer/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="762" column="0" selection-start="27028" selection-end="27028" vertical-scroll-proportion="0.33248082" vertical-offset="12824" max-vertical-offset="22729" />
+        <state line="2" column="0" selection-start="22" selection-end="22" vertical-scroll-proportion="0.055646483" vertical-offset="0" max-vertical-offset="611" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android_communicator.py">
+    <entry file="file://$PROJECT_DIR$/shimmer2r/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="17" selection-start="128" selection-end="128" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="1462">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="407" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CloudServer/db_schema.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="497" selection-end="497" vertical-scroll-proportion="0.47818792" vertical-offset="0" max-vertical-offset="596" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../CloudServer/fabfile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="31" selection-start="995" selection-end="995" vertical-scroll-proportion="0.0" vertical-offset="358" max-vertical-offset="799">
+        <state line="28" column="63" selection-start="0" selection-end="1407" vertical-scroll-proportion="0.5218121" vertical-offset="109" max-vertical-offset="705" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fabfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="5" selection-start="1303" selection-end="1303" vertical-scroll-proportion="1.1917475" vertical-offset="124" max-vertical-offset="720" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shimmer2r/shimmer_defs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="23" selection-start="203" selection-end="203" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="2475">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shimmer2r/ShimmerSensor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="147" column="29" selection-start="4266" selection-end="4266" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2430">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shimmer2r/accelerometer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="40" selection-start="838" selection-end="838" vertical-scroll-proportion="0.0" vertical-offset="713" max-vertical-offset="2400">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android_communicator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="0" selection-start="664" selection-end="664" vertical-scroll-proportion="0.0" vertical-offset="188" max-vertical-offset="1110">
+          <folding>
+            <element signature="e#22#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bluetooth_communicator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="32" selection-start="2206" selection-end="2206" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1035">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="53" selection-start="536" selection-end="536" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/sqlobject/mysql/mysqlconnection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="21" selection-start="737" selection-end="745" vertical-scroll-proportion="0.63993454" vertical-offset="0" max-vertical-offset="5253">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/sqlobject/mysql/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="36" selection-start="152" selection-end="152" vertical-scroll-proportion="0.1391162" vertical-offset="0" max-vertical-offset="611">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../CloudServer/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="22" selection-end="22" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../CloudServer/db_schema.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="497" selection-end="497" vertical-scroll-proportion="0.5564648" vertical-offset="0" max-vertical-offset="611">
+        <state line="44" column="46" selection-start="1243" selection-end="1243" vertical-scroll-proportion="1.6019417" vertical-offset="0" max-vertical-offset="1080">
           <folding>
-            <element signature="e#48#71#0" expanded="true" />
+            <element signature="e#22#49#0" expanded="true" />
           </folding>
         </state>
       </provider>
